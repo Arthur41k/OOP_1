@@ -75,6 +75,7 @@ namespace University_1
             Console.WriteLine($"{type}  {Name}  {Move} ");
 
             Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Yellow;
         }
     }
 }
