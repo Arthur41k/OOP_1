@@ -7,13 +7,23 @@ using System.Threading.Tasks;
 
 namespace University_1
 {
-    public class LandDinosaurus:IDino
+    /// <summary>
+    /// Клас LandDinosaurus включає методи для опису і видачі інформації про сухопутного динозавра
+    /// </summary>
+    class LandDinosaurus:IDino
     {
-        
+        public int number_1;
+        public LandDinosaurus(int number) 
+        {
+            this.number_1 = number;
+        }
         string Name;
         string type;
         string Move;
      
+        /// <summary>
+        /// Збір інформації про ім'я та вид динозавра
+        /// </summary>
         public void ReadValues()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -33,6 +43,9 @@ namespace University_1
             
         }
 
+        /// <summary>
+        /// Збір інформації про дію або стан динозавра
+        /// </summary>
         public void MoveTypes()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -66,13 +79,16 @@ namespace University_1
             }
            
         }
+        /// <summary>
+        /// Вивід існуючої інформації про динозавра 
+        /// </summary>
         public void WriteInfo()
         {
             Console.ForegroundColor = ConsoleColor.Red;
           
-            Console.WriteLine("\t Інформація: ");
+            Console.WriteLine("\t Інформація номер " + number_1);
 
-            Console.WriteLine($"{type}  {Name}  {Move} ");
+            Console.WriteLine($"  {type}  {Name}  {Move} ");
 
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Yellow;

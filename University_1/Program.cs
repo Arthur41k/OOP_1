@@ -9,7 +9,9 @@
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             Console.WriteLine("Напишіть про свого динозавра");
-            var Raptor = new LandDinosaurus();
+            //Створення об'єкту класу LandDinosaurus
+            var Raptor = new LandDinosaurus(1);
+            //Використання методів класу LandDinosaurus
             Raptor.ReadValues();
             Raptor.MoveTypes();
             Raptor.WriteInfo();
