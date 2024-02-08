@@ -10,8 +10,11 @@ namespace University_1
     /// <summary>
     /// Клас LandDinosaurus включає методи для опису і видачі інформації про сухопутного динозавра
     /// </summary>
-    class LandDinosaurus:IDino
+    class LandDinosaurus:Dino
     {
+        public string Type { get; set; } = "Сухопутний динозавр ";
+        public string Age { get; set; } = "65 milion years";
+
         public int number_1;
         public LandDinosaurus(int number) 
         {
@@ -87,6 +90,10 @@ namespace University_1
             Console.ForegroundColor = ConsoleColor.Red;
           
             Console.WriteLine("\t Інформація номер " + number_1);
+
+            Console.WriteLine($"{Type} {Age}");
+
+            Console.WriteLine("Що робить:");
 
             Console.WriteLine($"  {type}  {Name}  {Move} ");
 

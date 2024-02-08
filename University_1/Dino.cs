@@ -6,28 +6,14 @@ using System.Threading.Tasks;
 
 namespace University_1
 {
-    internal class Dino : IDino
+    internal interface Dino
     {
-        string name;
-        string types;
-        string move;
+        public string Type { get; set; }    
+        public string Age { get; set; }
+        public void ReadValues();
+        public void MoveTypes ();
+        public void WriteInfo();
 
-        public void ReadValues()
-        {
-            this.name = Console.ReadLine();
-            this.types = Console.ReadLine();
-            
-        }
         
-        public void MoveTypes() 
-        {
-            this.move = Console.ReadLine();
-        }
-        public void WriteInfo()
-        {
-            Console.WriteLine($"{name} {types} {move}"  );
-        }
-
-       
     }
 }
