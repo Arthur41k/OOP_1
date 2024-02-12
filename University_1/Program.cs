@@ -24,6 +24,12 @@
             Console.WriteLine("Напишіть вашу адресу:");
             McDonalds_1.Delivery(order);
            
+            //Створення об'єкту класу KFC
+            var KFC_1 = new KFC("Хрещатик");
+            //Використання методів класу KFC та батьківського класу FastFood
+            string order_2 = KFC_1.SpaicyBaсket();
+            KFC_1.Issuance(order_2);
+            KFC_1.Party(order_2,6);
         }
     }
 }

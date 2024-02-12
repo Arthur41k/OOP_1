@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace University_1
 {
     /// <summary>
-    /// McDonalds є підкласом FastFood який приймає адресу де знаходиться заклад
+    /// McDonalds є підкласом FastFood який приймає адресу де знаходиться заклад та використовує методи для обробки замовлень.
     /// </summary>
      class McDonalds:FastFood
     {
