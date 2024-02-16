@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace University_1
+namespace Food
 {
     /// <summary>
     /// McDonalds є підкласом FastFood який приймає адресу де знаходиться заклад та використовує методи для обробки замовлень.
@@ -28,28 +28,43 @@ namespace University_1
         /// <param name="order"></param>
         public void Delivery(string order)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string adress = Console.ReadLine();
             int Time = N.Next(20, 35);
             Console.WriteLine($"Доставка замовлення буде здійснена з {McAddress} в {adress} приблизно через {Time} хвилин. \n Замовлення: {order}");
+            Thread.Sleep( Time * 100 );
+            Console.WriteLine("Замовлення доставлено");
+            Console.ResetColor();
         }
 
-        /// <summary>
-        /// Робить замовлення для сніданку
-        /// </summary>
-        /// <returns></returns>
-        public string Breakfast()
+        //Добавлення до батьківського методу елементи з меню McDonalds
+        public override string Menu()
         {
-            return "ЧікенРол, кава та вишневий МакПеріг";
-        }
+            
+            string KFC_Order = base.Menu();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Меню McDonalds:\n Бігмак меню (4) \n Даблчізбургер меню (5) \n Чікенрол (6) ");
+            string acceptance = Console.ReadLine();
+            string order;
+            if (acceptance == "4")
+            {
+                order = "Бігмак, картопля фрі, напій";
 
-        /// <summary>
-        /// Робить замовлення для швидкого робочого перекусу
-        /// </summary>
-        /// <returns></returns>
-        public string BiznesLunch()
-        {
-            return "Дабл чізбургер, нагетси 6 шт. , Кока-Кола 0,5 л";
+            }
+            else if (acceptance == "5")
+            {
+                order = "Даблчізбургер, картопля фрі, напій";
+
+            }
+            else
+            {
+                order = "Чікенрол";
+
+            }
+            Console.ResetColor();
+            return $"{KFC_Order} \n {order}";
         }
     }
-   
 }
+   
+
